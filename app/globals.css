@@ -11,8 +11,6 @@
 html, body {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  will-change: transform;
 }
 
 img {
@@ -20,7 +18,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: transform;
 }
 
 .img {
@@ -56,7 +53,7 @@ button {
   font-size: 12px;
   font-weight: 600;
   margin: 0.25em 0;
-  padding: 0.3em 0.75em 0.25em 0.75em;
+  padding: 0.3em 0.75em;
   color: #0f0f0f;
   background-color: #dbccc0;
   border-radius: 2em;
@@ -69,32 +66,32 @@ section {
   overflow: hidden;
 }
 
-.nav {
-  position: abssolute;
+nav {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
   padding: 1em;
   display: flex;
-  jutify-content: space-between;
-  align-itemS: center;
+  justify-content: space-between;
+  align-items: center;
   z-index: 2;
 }
 
 section.projects {
   width: 100vw;
   height: 125vh;
-  diplay: flex;
+  display: flex;
   gap: 10em;
 }
 
 .projects-brief {
-  position: aboslute;
+  position: absolute;
   width: 25%;
   top: 35%;
   left: 35%;
-  tranform: translate(-50%, -50%),
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 
@@ -108,8 +105,8 @@ section.projects {
 }
 
 .project {
-  text-algin: center;
-  dissplay: flex;
+  text-align: center;
+  display: flex;
   flex-direction: column;
   gap: 1em;
 }
@@ -147,7 +144,7 @@ section.projects {
 
 .banner {
   display: flex;
-  jutify-content: center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -186,7 +183,7 @@ section.projects {
   flex: 2;
   display: flex;
   flex-direction: column;
-  justifyf-content: space-between;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -195,4 +192,3 @@ section.projects {
   width: 100%;
   height: 50%;
 }
-

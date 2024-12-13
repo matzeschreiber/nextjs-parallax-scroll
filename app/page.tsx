@@ -1,117 +1,125 @@
+"use client";
 
-import image1 from "../public/images/jacket1.png"
-import image2 from "../public/images/jacket1.png"
-import image3 from "../public/images/jacket1.png"
+import Image from "next/image";
+import image1 from "../public/images/jacket1.png";
+import image2 from "../public/images/jacket2.png"; // Changed for variety
+import image3 from "../public/images/jacket3.png"; // Changed for variety
+import Lenis from "./components/Lenis";
 
 export default function Home() {
-  return (
-    <div className="app">
-      <section className="hero">
-        <img src="" alt="" />
-        <nav className="">
-          <p>Link</p>
-          <p>Link</p>
-          <p>Link</p>
-          <p>Link</p>
-        </nav>
-      </section>
+  
 
-      <section className="projects">
-        <div className="img">
-          <img src={image1.src} alt={"Beautiful green jacket, surrounded by a blue winter style background"} />
-          <div className="projects-brief">
+  return (
+    <Lenis>
+      <div className="app">
+        {/* Hero Section */}
+        <section className="hero">
+          <Image src={image1} alt="Stylish green jacket in a winter-themed background" />
+          <nav>
+            <p>Home</p>
+            <p>About</p>
+            <p>Projects</p>
+            <p>Contact</p>
+          </nav>
+        </section>
+
+        {/* Projects Section */}
+        <section className="projects">
+          <div className="project">
+            <Image
+              src={image1}
+              alt="Beautiful green jacket, surrounded by a blue winter style background"
+            />
+            <div className="projects-brief">
+              <p>
+                Liam Cartwright's 2023 breakout track "Sundown" climbed the global
+                charts, achieved multi-platinum status, and amassed over 1 billion
+                streams in its first year.
+              </p>
+            </div>
+          </div>
+
+          <div className="projects-cover">
+            <Image
+              src={image2}
+              alt="Another stylish jacket featured in a stunning background"
+            />
+            <div className="projects-list">
+              {["Sunrise", "Sunset", "Moonlight", "Starlight"].map((title, idx) => (
+                <div key={idx} className="project">
+                  <h1>{title}</h1>
+                  <p>Apple Music / Spotify / YouTube</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="about">
+          <div className="intro">
+            <p>Introduction</p>
             <p>
-              Liam Cartwright's 2023 breakout track "sundown" climed the global cahts, achieved multi-platinum status, and amassed over 1 billion streams in its first year.
+              Liam Cartwright's 2023 breakout track "Sundown" climbed the global
+              charts, achieved multi-platinum status, and amassed over 1 billion
+              streams in its first year.
             </p>
           </div>
 
-          <div className="col projects-cover">
-            <div className="img">
-              <img src={image2.src} alt={"Beautiful green jacket, surrounded by a blue winter style background"} />
-            </div>
-            
-            <div className="col projects-list">
-              <div className="project">
-                <h1>Sunrise</h1>
-                <p>Apple Music / Spotify / YouTube</p>
-              </div>
-              <div className="project">
-                <h1>Sunrise</h1>
-                <p>Apple Music2 / Spotify / YouTube</p>
-              </div>
-              <div className="project">
-                <h1>Sunrise</h1>
-                <p>Apple Music3 / Spotify / YouTube</p>
-              </div>
-              <div className="project">
-                <h1>Sunrise</h1>
-                <p>Apple Music4 / Spotify / YouTube</p>
-              </div>
-            </div>
-        </div>
-        </div>
-      </section>
-
-      <section className="about">
-        <div className="col intro">
-          <p>Introduction</p>
-          <p>
-            Liam Cartwright's 2023 breakout track "sundown" climed the global cahts, achieved multi-platinum status, and amassed over 1 billion streams in its first year.
-          </p>
-        </div>
-
-        <div className="col portrait">
           <div className="portrait-container">
-            <div className="img">
-              <img src={image3.src} alt={"Beautiful green jacket, surrounded by a blue winter style background"} />
-            </div>
+            <Image
+              src={image3}
+              alt="Portrait of Liam Cartwright in a green jacket with a blue winter background"
+            />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="banner">
-        <div className="img">
-          <img src={image1.src} alt={"Beautiful green jacket, surrounded by a blue winter style background"} />
-        </div>
-        <div className="banner-copy">
-          <p>Be the</p>
-          <h2>First to know</h2>
-          <p>Want to hear te latest news  on my upcoming music releasses, tourin, and merching?</p>
-          <button>Join the newssletter</button>
-        </div>
-      </section>
+        {/* Banner Section */}
+        <section className="banner">
+          <Image
+            src={image1}
+            alt="Promotional banner featuring a stylish green jacket"
+          />
+          <div className="banner-copy">
+            <p>Be the</p>
+            <h2>First to Know</h2>
+            <p>
+              Want to hear the latest news on my upcoming music releases, touring,
+              and merch?
+            </p>
+            <button>Join the Newsletter</button>
+          </div>
+        </section>
 
+        {/* Footer Section */}
+        <footer className="footer">
+          <div className="social-links">
+            <p>Instagram / TikTok / Discord</p>
+          </div>
 
-      <section className="footer">
-        <div className="col">
-          <p>Instagram / TikTok / Discord</p>
-        </div>
-        <div className="col">
           <div className="footer-links">
             <p>Menu</p>
-            <h2>Tour</h2>
-            <h2>Tour</h2>
-            <h2>Tour</h2>
-            <h2>Tour</h2>
-
+            {Array(4).fill("Tour").map((item, idx) => (
+              <h2 key={idx}>{item}</h2>
+            ))}
             <p>&copy; Designed by Codegrid</p>
           </div>
 
-          <div className="col">
+          <div className="newsletter">
             <p>
-                Join the newsletter <br />
-                <button>Subscribe</button>
+              Join the newsletter
+              <button>Subscribe</button>
             </p>
             <div className="shop">
-              <div className="img">
-              <img src={image2.src} alt={"Beautiful green jacket, surrounded by a blue winter style background"} />
-              </div>
+              <Image
+                src={image2}
+                alt="Promotional product image for Liam Cartwright merchandise"
+              />
             </div>
-            <p>Spotiffy / Apple Music / YouTube</p>
+            <p>Spotify / Apple Music / YouTube</p>
           </div>
-        </div>
-      </section>
-
-    </div>
+        </footer>
+      </div>
+    </Lenis>
   );
 }
