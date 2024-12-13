@@ -5,6 +5,7 @@ import image1 from "../public/images/jacket1.png";
 import image2 from "../public/images/jacket2.png"; // Changed for variety
 import image3 from "../public/images/jacket3.png"; // Changed for variety
 import Lenis from "./components/Lenis";
+import ParallaxImage from "./components/ParallaxImage";
 
 export default function Home() {
   
@@ -14,7 +15,7 @@ export default function Home() {
       <div className="app">
         {/* Hero Section */}
         <section className="hero">
-          <Image src={image1} alt="Stylish green jacket in a winter-themed background" />
+          <ParallaxImage src={image1.src} alt="Stylish green jacket in a winter-themed background" />
           <nav>
             <p>Home</p>
             <p>About</p>
@@ -26,8 +27,8 @@ export default function Home() {
         {/* Projects Section */}
         <section className="projects">
           <div className="project">
-            <Image
-              src={image1}
+            <ParallaxImage
+              src={image2.src}
               alt="Beautiful green jacket, surrounded by a blue winter style background"
             />
             <div className="projects-brief">
@@ -40,8 +41,8 @@ export default function Home() {
           </div>
 
           <div className="projects-cover">
-            <Image
-              src={image2}
+            <ParallaxImage
+              src={image3.src}
               alt="Another stylish jacket featured in a stunning background"
             />
             <div className="projects-list">
@@ -67,8 +68,8 @@ export default function Home() {
           </div>
 
           <div className="portrait-container">
-            <Image
-              src={image3}
+            <ParallaxImage
+              src={image1.src}
               alt="Portrait of Liam Cartwright in a green jacket with a blue winter background"
             />
           </div>
@@ -76,8 +77,8 @@ export default function Home() {
 
         {/* Banner Section */}
         <section className="banner">
-          <Image
-            src={image1}
+          <ParallaxImage
+            src={image2.src}
             alt="Promotional banner featuring a stylish green jacket"
           />
           <div className="banner-copy">
@@ -111,8 +112,8 @@ export default function Home() {
               <button>Subscribe</button>
             </p>
             <div className="shop">
-              <Image
-                src={image2}
+              <ParallaxImage
+                src={image3.src}
                 alt="Promotional product image for Liam Cartwright merchandise"
               />
             </div>
